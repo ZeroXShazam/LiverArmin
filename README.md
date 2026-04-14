@@ -14,11 +14,11 @@
 
 ## 🚀 Upload your map
 
-In the `.env` file, you can set your upload strategy to `GH_PAGES` (default) or `MAP_STORAGE`. Simply comment out the option you don't want to use.
+In the `.env` file, you can set your upload strategy to `MAP_STORAGE` (default) or `GH_PAGES`. Simply comment out the option you don't want to use.
 
-Uploading a map using [GitHub Pages](https://docs.github.com/pages) will host your project on GitHub servers, and it's the most straightforward way to add new maps to your world.
+Uploading a map using the [WA map storage](https://docs.workadventu.re/map-building/tiled-editor/publish/wa-hosted) will host your project on WA servers.
 
-Uploading a map using the [WA map storage](https://docs.workadventu.re/map-building/tiled-editor/publish/wa-hosted) will host your project on WA servers. It's a bit more difficult to set up, but it comes with great advantages, like being able to have private repositories.
+Uploading a map using [GitHub Pages](https://docs.github.com/pages) will host your project on GitHub servers. It's a bit more difficult to set up, and can only be used with public repositories (or with private repositories if you have a Github active subscription).
 
 ## 🗂️ Project Structure
 
