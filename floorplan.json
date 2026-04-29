@@ -1,0 +1,172 @@
+{
+  "map": {
+    "width": 60,
+    "height": 80,
+    "tile_size": 32
+  },
+  "rooms": [
+    {
+      "id": "sozialraum",
+      "label": "Sozialraum 45,75m²",
+      "rect": { "x": 23, "y": 8, "w": 15, "h": 12 },
+      "floor": "wood",
+      "wall_style": "solid",
+      "doors": [
+        { "to": "gang_main", "x": 23, "y": 19, "w": 2 },
+        { "to": "buro_1",    "x": 32, "y": 19, "w": 2 }
+      ],
+      "furniture": [
+        { "kind": "presentation_screen", "x": 24, "y": 8, "w": 8, "facing": "south" },
+        { "kind": "meeting_table", "x": 24, "y": 10, "w": 4, "h": 2 },
+        { "kind": "round_table", "x": 30, "y": 11 },
+        { "kind": "round_table", "x": 25, "y": 14 },
+        { "kind": "lounge_set", "x": 29, "y": 14, "w": 4, "h": 3 },
+        { "kind": "kitchen_counter", "x": 36, "y": 9, "w": 1, "h": 5, "facing": "west" },
+        { "kind": "potted_plant", "x": 36, "y": 18 }
+      ]
+    },
+    {
+      "id": "gang_main",
+      "label": "GANG",
+      "rect": { "x": 22, "y": 20, "w": 5, "h": 30 },
+      "floor": "gang_carpet",
+      "wall_style": "solid",
+      "doors": [],
+      "furniture": []
+    },
+    {
+      "id": "buro_5",
+      "label": "Büro 5",
+      "rect": { "x": 11, "y": 50, "w": 16, "h": 25 },
+      "floor": "green_carpet",
+      "wall_style": "solid",
+      "doors": [
+        { "to": "gang_main", "x": 24, "y": 50, "w": 2 },
+        { "to": "buro_4",    "x": 26, "y": 55, "w": 1 }
+      ],
+      "furniture": [
+        { "kind": "desk_grouped", "x": 13, "y": 54, "people": 4, "orientation": "horizontal" },
+        { "kind": "desk_grouped", "x": 13, "y": 66, "people": 4, "orientation": "horizontal" },
+        { "kind": "whiteboard",   "x": 25, "y": 62, "facing": "west" },
+        { "kind": "potted_plant", "x": 12, "y": 73 }
+      ]
+    },
+    {
+      "id": "buro_1",
+      "label": "Büro",
+      "rect": { "x": 27, "y": 20, "w": 11, "h": 12 },
+      "floor": "green_carpet",
+      "wall_style": "solid",
+      "doors": [
+        { "to": "gang_main", "x": 27, "y": 25, "w": 1 }
+      ],
+      "furniture": [
+        { "kind": "desk_grouped", "x": 30, "y": 23, "people": 4, "orientation": "vertical" },
+        { "kind": "potted_plant", "x": 36, "y": 30 }
+      ]
+    },
+    {
+      "id": "buro_2",
+      "label": "Büro",
+      "rect": { "x": 27, "y": 32, "w": 11, "h": 10 },
+      "floor": "green_carpet",
+      "wall_style": "solid",
+      "doors": [
+        { "to": "gang_main", "x": 27, "y": 36, "w": 1 }
+      ],
+      "furniture": [
+        { "kind": "desk_grouped", "x": 29, "y": 34, "people": 4, "orientation": "horizontal" }
+      ]
+    },
+    {
+      "id": "buro_3",
+      "label": "Büro 3",
+      "rect": { "x": 27, "y": 42, "w": 11, "h": 10 },
+      "floor": "green_carpet",
+      "wall_style": "solid",
+      "doors": [
+        { "to": "gang_main", "x": 27, "y": 45, "w": 1 }
+      ],
+      "furniture": [
+        { "kind": "desk_grouped", "x": 31, "y": 44, "people": 2, "orientation": "horizontal" },
+        { "kind": "potted_plant", "x": 28, "y": 43 }
+      ]
+    },
+    {
+      "id": "buro_4",
+      "label": "Büro 4",
+      "rect": { "x": 27, "y": 52, "w": 11, "h": 8 },
+      "floor": "green_carpet",
+      "wall_style": "solid",
+      "doors": [
+        { "to": "gang_main", "x": 27, "y": 54, "w": 1 }
+      ],
+      "furniture": [
+        { "kind": "desk_grouped", "x": 29, "y": 55, "people": 3, "orientation": "horizontal" }
+      ]
+    },
+    {
+      "id": "wc_h",
+      "label": "WC-H",
+      "rect": { "x": 15, "y": 34, "w": 7, "h": 6 },
+      "floor": "bathroom_tiles",
+      "wall_style": "solid",
+      "doors": [
+        { "to": "gang_main", "x": 22, "y": 37, "w": 1 }
+      ],
+      "furniture": [
+        { "kind": "wc_toilet", "x": 16, "y": 35 },
+        { "kind": "wc_sink",   "x": 20, "y": 38 }
+      ]
+    },
+    {
+      "id": "wc_d",
+      "label": "WC-D",
+      "rect": { "x": 15, "y": 40, "w": 7, "h": 6 },
+      "floor": "bathroom_tiles",
+      "wall_style": "solid",
+      "doors": [
+        { "to": "gang_main", "x": 22, "y": 43, "w": 1 }
+      ],
+      "furniture": [
+        { "kind": "wc_toilet", "x": 16, "y": 41 },
+        { "kind": "wc_sink",   "x": 20, "y": 44 }
+      ]
+    }
+  ],
+  "outdoor_areas": [
+    {
+      "id": "terrasse_top",
+      "label": "TERRASSE",
+      "rect": { "x": 23, "y": 2, "w": 15, "h": 6 },
+      "floor": "stone_pavement",
+      "furniture": [
+        { "kind": "round_table_outdoor", "x": 28, "y": 4 },
+        { "kind": "round_table_outdoor", "x": 33, "y": 4 }
+      ]
+    },
+    {
+      "id": "terrasse_side_1",
+      "label": "TERRASSE",
+      "rect": { "x": 38, "y": 20, "w": 8, "h": 18 },
+      "floor": "stone_pavement",
+      "furniture": [
+        { "kind": "round_table_outdoor", "x": 41, "y": 24 },
+        { "kind": "round_table_outdoor", "x": 41, "y": 32 }
+      ]
+    },
+    {
+      "id": "terrasse_side_2",
+      "label": "TERRASSE",
+      "rect": { "x": 38, "y": 42, "w": 8, "h": 18 },
+      "floor": "stone_pavement",
+      "furniture": [
+        { "kind": "round_table_outdoor", "x": 41, "y": 48 }
+      ]
+    }
+  ],
+  "annotations": [
+    { "kind": "label", "text": "DACHGESCHOSS",  "x": 40, "y": 75 },
+    { "kind": "label", "text": "JOHANNESGASSE", "x": 52, "y": 35 }
+  ]
+}
