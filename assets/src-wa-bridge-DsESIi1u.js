@@ -1,0 +1,2 @@
+const i="https://live-armin.vercel.app/scripting/wa-bridge.js";function o(){try{const r=WA?.room?.hashParameters??{};if(r.bridge)return String(r.bridge)}catch{}return i}WA.onInit().then(()=>{const r=o();console.info("[live-armin] loading bridge from",r);const e=document.createElement("script");e.src=r,e.async=!0,e.onerror=n=>console.error("[live-armin] failed to load bridge",r,n),document.head.appendChild(e)}).catch(r=>console.error("[live-armin] WA.onInit failed",r));
+//# sourceMappingURL=src-wa-bridge-DsESIi1u.js.map
