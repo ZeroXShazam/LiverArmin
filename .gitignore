@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 .env.secret
 dist.zip
+
+# Local render/inspect artifacts produced by scripts/render_map.py and the
+# tile-debug helpers. Keep only the polished chatarmin-office.preview.png.
+chatarmin-office.raw.png
+_check_*.png
+_tile_inspect_*.png

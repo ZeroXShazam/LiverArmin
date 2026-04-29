@@ -7,22 +7,37 @@
   "rooms": [
     {
       "id": "sozialraum",
-      "label": "Sozialraum 45,75m²",
+      "label": "Sozialraum 70,86m²",
       "rect": { "x": 23, "y": 8, "w": 15, "h": 12 },
       "floor": "wood",
       "wall_style": "solid",
       "doors": [
-        { "to": "gang_main", "x": 23, "y": 19, "w": 2 },
-        { "to": "buro_1",    "x": 32, "y": 19, "w": 2 }
+        { "to": "gang_main",     "x": 23, "y": 19, "w": 2 },
+        { "to": "sozialraum_ext", "x": 27, "y": 19, "w": 11 }
       ],
       "furniture": [
-        { "kind": "presentation_screen", "x": 24, "y": 8, "w": 8, "facing": "south" },
+        { "kind": "presentation_screen", "x": 24, "y": 9, "w": 8, "facing": "south" },
         { "kind": "meeting_table", "x": 24, "y": 10, "w": 4, "h": 2 },
         { "kind": "round_table", "x": 30, "y": 11 },
         { "kind": "round_table", "x": 25, "y": 14 },
         { "kind": "lounge_set", "x": 29, "y": 14, "w": 4, "h": 3 },
+        { "kind": "couch_west", "x": 36, "y": 14, "h": 4 },
         { "kind": "kitchen_counter", "x": 36, "y": 9, "w": 1, "h": 5, "facing": "west" },
         { "kind": "potted_plant", "x": 36, "y": 18 }
+      ]
+    },
+    {
+      "id": "sozialraum_ext",
+      "label": "Sozialraum",
+      "rect": { "x": 27, "y": 20, "w": 11, "h": 9 },
+      "floor": "wood",
+      "wall_style": "solid",
+      "doors": [
+        { "to": "sozialraum", "x": 27, "y": 20, "w": 11 }
+      ],
+      "furniture": [
+        { "kind": "round_table", "x": 30, "y": 23 },
+        { "kind": "potted_plant", "x": 36, "y": 27 }
       ]
     },
     {
@@ -41,68 +56,67 @@
       "floor": "green_carpet",
       "wall_style": "solid",
       "doors": [
-        { "to": "gang_main", "x": 24, "y": 50, "w": 2 },
-        { "to": "buro_4",    "x": 26, "y": 55, "w": 1 }
+        { "to": "gang_main", "x": 24, "y": 50, "w": 2 }
       ],
       "furniture": [
-        { "kind": "desk_grouped", "x": 13, "y": 54, "people": 4, "orientation": "horizontal" },
-        { "kind": "desk_grouped", "x": 13, "y": 66, "people": 4, "orientation": "horizontal" },
+        { "kind": "desk_cluster", "x": 13, "y": 53, "people_per_row": 8 },
+        { "kind": "desk_cluster", "x": 13, "y": 66, "people_per_row": 8 },
         { "kind": "whiteboard",   "x": 25, "y": 62, "facing": "west" },
         { "kind": "potted_plant", "x": 12, "y": 73 }
       ]
     },
     {
       "id": "buro_1",
-      "label": "Büro",
-      "rect": { "x": 27, "y": 20, "w": 11, "h": 12 },
+      "label": "Büro 1",
+      "rect": { "x": 27, "y": 29, "w": 11, "h": 18 },
       "floor": "green_carpet",
       "wall_style": "solid",
       "doors": [
-        { "to": "gang_main", "x": 27, "y": 25, "w": 1 }
+        { "to": "gang_main", "x": 27, "y": 40, "w": 1 }
       ],
       "furniture": [
-        { "kind": "desk_grouped", "x": 30, "y": 23, "people": 4, "orientation": "vertical" },
-        { "kind": "potted_plant", "x": 36, "y": 30 }
+        { "kind": "desk_grouped", "x": 30, "y": 38, "people": 4, "orientation": "vertical" },
+        { "kind": "potted_plant", "x": 36, "y": 45 }
       ]
     },
     {
       "id": "buro_2",
-      "label": "Büro",
-      "rect": { "x": 27, "y": 32, "w": 11, "h": 10 },
+      "label": "Büro 2",
+      "rect": { "x": 27, "y": 47, "w": 11, "h": 10 },
       "floor": "green_carpet",
       "wall_style": "solid",
       "doors": [
-        { "to": "gang_main", "x": 27, "y": 36, "w": 1 }
+        { "to": "gang_main", "x": 27, "y": 48, "w": 1 }
       ],
       "furniture": [
-        { "kind": "desk_grouped", "x": 29, "y": 34, "people": 4, "orientation": "horizontal" }
+        { "kind": "desk_grouped", "x": 29, "y": 49, "people": 4, "orientation": "horizontal" }
       ]
     },
     {
       "id": "buro_3",
       "label": "Büro 3",
-      "rect": { "x": 27, "y": 42, "w": 11, "h": 10 },
+      "rect": { "x": 27, "y": 57, "w": 11, "h": 10 },
       "floor": "green_carpet",
       "wall_style": "solid",
       "doors": [
-        { "to": "gang_main", "x": 27, "y": 45, "w": 1 }
+        { "to": "buro_5", "x": 27, "y": 60, "w": 1 }
       ],
       "furniture": [
-        { "kind": "desk_grouped", "x": 31, "y": 44, "people": 2, "orientation": "horizontal" },
-        { "kind": "potted_plant", "x": 28, "y": 43 }
+        { "kind": "desk_grouped", "x": 31, "y": 59, "people": 2, "orientation": "horizontal" },
+        { "kind": "potted_plant", "x": 28, "y": 58 }
       ]
     },
     {
       "id": "buro_4",
       "label": "Büro 4",
-      "rect": { "x": 27, "y": 52, "w": 11, "h": 8 },
+      "rect": { "x": 27, "y": 67, "w": 11, "h": 8 },
       "floor": "green_carpet",
       "wall_style": "solid",
       "doors": [
-        { "to": "gang_main", "x": 27, "y": 54, "w": 1 }
+        { "to": "buro_3", "x": 32, "y": 67, "w": 1 }
       ],
       "furniture": [
-        { "kind": "desk_grouped", "x": 29, "y": 55, "people": 3, "orientation": "horizontal" }
+        { "kind": "desk_grouped", "x": 29, "y": 70, "people": 3, "orientation": "horizontal" }
       ]
     },
     {
@@ -137,7 +151,7 @@
   "outdoor_areas": [
     {
       "id": "terrasse_top",
-      "label": "TERRASSE",
+      "label": "1",
       "rect": { "x": 23, "y": 2, "w": 15, "h": 6 },
       "floor": "stone_pavement",
       "furniture": [
@@ -147,21 +161,21 @@
     },
     {
       "id": "terrasse_side_1",
-      "label": "TERRASSE",
-      "rect": { "x": 38, "y": 20, "w": 8, "h": 18 },
+      "label": "2",
+      "rect": { "x": 38, "y": 23, "w": 8, "h": 18 },
       "floor": "stone_pavement",
       "furniture": [
-        { "kind": "round_table_outdoor", "x": 41, "y": 24 },
-        { "kind": "round_table_outdoor", "x": 41, "y": 32 }
+        { "kind": "round_table_outdoor", "x": 41, "y": 27 },
+        { "kind": "round_table_outdoor", "x": 41, "y": 35 }
       ]
     },
     {
       "id": "terrasse_side_2",
-      "label": "TERRASSE",
-      "rect": { "x": 38, "y": 42, "w": 8, "h": 18 },
+      "label": "3",
+      "rect": { "x": 38, "y": 45, "w": 8, "h": 18 },
       "floor": "stone_pavement",
       "furniture": [
-        { "kind": "round_table_outdoor", "x": 41, "y": 48 }
+        { "kind": "round_table_outdoor", "x": 41, "y": 51 }
       ]
     }
   ],

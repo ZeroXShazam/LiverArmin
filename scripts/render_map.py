@@ -94,19 +94,33 @@ def tile_image(ts, local_id):
     return ts["image"].crop(box)
 
 
+FLIP_H = 0x80000000
+FLIP_V = 0x40000000
+FLIP_D = 0x20000000
+
+
 def paste_layer(canvas, layer, W, H, TW, TH, tilesets):
     data = layer.get("data") or []
     for i, gid in enumerate(data):
         if gid == 0:
             continue
-        # Mask away Tiled flip flags (top 4 bits)
+        flip_h = bool(gid & FLIP_H)
+        flip_v = bool(gid & FLIP_V)
+        flip_d = bool(gid & FLIP_D)
         gid_clean = gid & 0x1FFFFFFF
         ts, local = find_tileset(gid_clean, tilesets)
         if ts is None:
             continue
+        tile = tile_image(ts, local)
+        if flip_d:
+            tile = tile.transpose(Image.TRANSPOSE)
+        if flip_h:
+            tile = tile.transpose(Image.FLIP_LEFT_RIGHT)
+        if flip_v:
+            tile = tile.transpose(Image.FLIP_TOP_BOTTOM)
         x = (i % W) * TW
         y = (i // W) * TH
-        canvas.alpha_composite(tile_image(ts, local), dest=(x, y))
+        canvas.alpha_composite(tile, dest=(x, y))
 
 
 def collect_objects(layers):
