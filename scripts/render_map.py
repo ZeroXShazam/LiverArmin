@@ -14,6 +14,8 @@ floorplan.json, so it's obvious at a glance what's what.
 import json
 import sys
 from pathlib import Path
+from typing import Optional
+
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -199,7 +201,17 @@ def draw_object_zones(canvas, objects, TW, TH):
     canvas.alpha_composite(overlay)
 
 
-def render(map_path: Path, out_path: Path):
+def render(map_path: Path, out_path: Path, clean_path: Optional[Path] = None):
+    """Render the .tmj.
+
+    Always produces ``out_path`` with the debug overlays (room labels, object
+    zones) drawn on top — that's the file we use ourselves for sanity checks.
+
+    If ``clean_path`` is given, an overlay-free version is also written to that
+    path. The clean image is what WorkAdventure uses as the room thumbnail
+    (referenced from the .tmj's ``mapImage`` property), so it must be free of
+    any debug drawing.
+    """
     m = json.loads(map_path.read_text())
     W, H = m["width"], m["height"]
     TW, TH = m["tilewidth"], m["tileheight"]
@@ -217,8 +229,14 @@ def render(map_path: Path, out_path: Path):
 
     walk(m["layers"])
 
-    # overlays — read floorplan.json (best-effort) for room labels, then stamp
-    # every object zone from the .tmj itself
+    # Snapshot the clean tile composite BEFORE we paint any overlays — that's
+    # the version WA will show as the room thumbnail.
+    if clean_path is not None:
+        canvas.convert("RGB").save(clean_path, "PNG", optimize=True)
+        print(f"rendered {clean_path} ({W*TW}x{H*TH}, {clean_path.stat().st_size:,} bytes)")
+
+    # Now paint the debug overlays on top: room outlines/labels (from
+    # floorplan.json if available) and every object zone in the .tmj.
     plan_path = ROOT / "floorplan.json"
     plan = json.loads(plan_path.read_text()) if plan_path.exists() else None
     draw_room_labels(canvas, plan, TW, TH)
@@ -231,4 +249,10 @@ def render(map_path: Path, out_path: Path):
 if __name__ == "__main__":
     src = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "chatarmin-office.tmj"
     dst = Path(sys.argv[2]) if len(sys.argv) > 2 else ROOT / "chatarmin-office.preview.png"
-    render(src, dst)
+    # Conventional companion path: chatarmin-office.preview.png ->
+    # chatarmin-office.png. Caller can opt out by passing a 3rd arg of "-".
+    if len(sys.argv) > 3:
+        clean = None if sys.argv[3] == "-" else Path(sys.argv[3])
+    else:
+        clean = ROOT / "chatarmin-office.png"
+    render(src, dst, clean)

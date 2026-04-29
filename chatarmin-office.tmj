@@ -170,7 +170,7 @@
   {
    "name": "mapImage",
    "type": "string",
-   "value": "office.png"
+   "value": "chatarmin-office.png"
   },
   {
    "name": "script",
@@ -34005,24 +34005,6 @@
      "height": 128,
      "rotation": 0,
      "visible": true
-    },
-    {
-     "id": 9,
-     "name": "jitsi_meetingroom",
-     "type": "area",
-     "x": 896,
-     "y": 960,
-     "width": 288,
-     "height": 512,
-     "rotation": 0,
-     "visible": true,
-     "properties": [
-      {
-       "name": "jitsiRoom",
-       "type": "string",
-       "value": "chatarmin-buro1"
-      }
-     ]
     }
    ]
   },

@@ -685,7 +685,6 @@ def build_objects(plan, seat_registry, spawn):
       - desk_<localPart> over the first 5 seats of buro_5
       - start zone
       - screen_mrr / screen_leaderboard for live data displays
-      - jitsi room over a sensible meeting area (sozialraum if present)
     """
     objects = []
     next_id = 1
@@ -727,14 +726,6 @@ def build_objects(plan, seat_registry, spawn):
         objects.append(rect("screen_leaderboard",
                             r["x"] - 4, r["y"] + 1, 4, 4))
 
-    # jitsi over büro_1 (Gemini's first office)
-    if "buro_1" in rooms_by_id:
-        r = rooms_by_id["buro_1"]["rect"]
-        objects.append(rect("jitsi_meetingroom",
-                            r["x"] + 1, r["y"] + 1, r["w"] - 2, r["h"] - 2,
-                            klass="area",
-                            properties=[{"name": "jitsiRoom", "type": "string", "value": "chatarmin-buro1"}]))
-
     return objects
 
 
@@ -758,7 +749,7 @@ def compose(plan, s, objects):
         "properties": [
             {"name": "mapName",        "type": "string", "value": "Chatarmin Office"},
             {"name": "mapDescription", "type": "string", "value": "ChatArmin Dachgeschoss — virtual replica of the new office."},
-            {"name": "mapImage",       "type": "string", "value": "office.png"},
+            {"name": "mapImage",       "type": "string", "value": "chatarmin-office.png"},
             {"name": "script",         "type": "string", "value": "src/wa-bridge.ts"},
             {"name": "mapCopyright",   "type": "string", "value": "© ChatArmin GmbH. Tiles: WorkAdventure (CC-BY-SA 3.0)."},
         ],
